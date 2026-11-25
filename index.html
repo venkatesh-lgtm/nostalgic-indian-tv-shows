@@ -64,6 +64,10 @@ h2{font:400 26px/1.1 Bungee,Impact,sans-serif;margin:0 0 4px}
 .show:hover{transform:translateY(-3px)}
 .show[aria-current=true]{outline:4px solid var(--accent);outline-offset:2px}
 .pst{position:relative;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font:400 34px/1 Bungee,sans-serif;color:#fff;overflow:hidden}
+.pst{background:var(--c)}
+.art{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;background:repeating-conic-gradient(from 0deg at 50% 110%,rgba(255,255,255,.18) 0 8deg,transparent 8deg 16deg),linear-gradient(180deg,transparent 30%,rgba(0,0,0,.45)),var(--c)}
+.art .ttl{font:400 clamp(16px,2.2vw,22px)/1.05 Bungee,sans-serif;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.45);text-wrap:balance;text-align:left}
+.art .yr{font:800 12px Nunito,sans-serif;color:#fff;opacity:.9;margin-top:4px;text-align:left}
 .pst img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.36)}
 .pst .no{position:absolute;top:8px;left:10px;z-index:1;font-size:13px;background:rgba(0,0,0,.6);padding:2px 8px;border-radius:6px}
 .show .t{padding:10px 12px 12px;display:grid;gap:3px}
@@ -112,47 +116,46 @@ footer{border-top:3px solid var(--line)}
 
 <script>
 {
-const V=(id,label)=>({t:'v',id,label}), L=(id,label)=>({t:'l',id,label});
+const V=(id,label)=>({t:'v',id,label}), L=(id,label)=>({t:'l',id,label}), Q=(ids,label)=>({t:'q',ids,label});
 // c: pre | cn | dd.  p: poster video id.  f: fan upload
 const SHOWS=[
- {n:'Noddy',y:'1992–2006',ch:'Cartoon Network · Pogo',c:'pre',col:'#e8312a',p:'LjnDnF3LThs',b:'Toyland\'s little taxi driver, Big Ears, Tessie Bear and those sneaky goblins.',s:[V('LjnDnF3LThs','Underwater Adventure')],o:'Noddy Official'},
- {n:'Galli Galli Sim Sim',y:'2006–2014',ch:'Cartoon Network · Pogo · DD',c:'pre',col:'#f28c1e',p:'kC28-4cB_HY',b:'India\'s own Sesame Street with Chamki, Boombah, Googly and Aanchoo.',s:[V('kC28-4cB_HY','Word on the Street')],o:'Sesame Workshop India'},
+ {n:'Noddy',y:'1992–2006',ch:'Cartoon Network · Pogo',c:'pre',col:'#e8312a',p:'BT5Kbr-7fRk',b:'Make Way for Noddy in Hindi — Toyland\'s little taxi driver and his friends.',s:[Q(['BT5Kbr-7fRk','fCe-GLugMps','7eW7K_pTm-k','L6hXqh52e8U','EI0juSqpvQI','aYzNMsXkd6U','8rbGUK6op7E'],'Hindi episodes'),V('LjnDnF3LThs','English episode')],o:'Fan uploads (Hindi)',f:1},
+ {n:'Galli Galli Sim Sim',y:'2006–2014',ch:'Cartoon Network · Pogo · DD',c:'pre',col:'#f28c1e',p:'kC28-4cB_HY',b:'India\'s own Sesame Street with Chamki, Boombah, Googly and Aanchoo.',s:[Q(['CeXsX8KxOvA','wBnuG6yQk2c','kC28-4cB_HY'],'Episodes')],o:'Sesame Workshop India'},
  {n:'Little Krishna',y:'2009',ch:'Nickelodeon',c:'pre',col:'#1f8fd6',p:'0sz-4zEPMlA',b:'Makhan chor in 3D — Vrindavan adventures in Hindi.',s:[L('PL072FAABC1269965C','All Hindi episodes')],o:'Big Animation'},
- {n:'Chhota Bheem',y:'2008',ch:'Pogo',c:'cn',col:'#ff7a1a',p:'YYp2eKHm3P4',b:'Dholakpur, laddoos, Chutki, Raju and Kalia.',s:[L('PL0rMr_qVm_FIV9I20eWHfQTX1O8twsdws','Season 1')],o:'Green Gold TV'},
- {n:'Pokémon',y:'2003',ch:'Cartoon Network · Pogo · Hungama',c:'cn',col:'#f5c400',p:'8csS-7aCpiw',b:'Ash and Pikachu in Hindi. Gotta catch \'em all!',s:[V('8csS-7aCpiw','Ultimate Journeys ep 30')],o:'Pokémon Asia Official (Hindi)'},
- {n:'Ben 10',y:'2006',ch:'Cartoon Network',c:'cn',col:'#27a844',p:'Y3A3f8c8gNo',b:'Ben, the Omnitrix, Gwen, Grandpa Max and Kevin 11 — in Hindi.',s:[V('Y3A3f8c8gNo','Action starts with Ben')],o:'Cartoon Network India'},
- {n:'Roll No 21',y:'2010',ch:'Cartoon Network',c:'cn',col:'#2b6bd6',p:'g3wwfgGAduc',b:'Kris vs Kanishq at the Mathura orphanage.',s:[V('g3wwfgGAduc','Kanishq ka magical sweater')],o:'Discovery Kids India'},
+ {n:'Chhota Bheem',y:'2008',ch:'Pogo',c:'cn',col:'#ff7a1a',p:'sVDgfPbsVDA',b:'Dholakpur, laddoos, Chutki, Raju and Kalia — the original Hindi episodes.',s:[Q(['sVDgfPbsVDA','pqifqjFz9mU','8vy6W92kuWE','LCnczVeOIgM','DyfEpFcvPtU'],'Hindi episodes')],o:'Green Gold'},
+ {n:'Pokémon',y:'2003',ch:'Cartoon Network · Pogo · Hungama',c:'cn',col:'#f5c400',p:'8csS-7aCpiw',b:'Ash and Pikachu in Hindi. Gotta catch \'em all!',s:[L('PLJuI8TslmruCBArTS857rS7BdzLgoGQs-','Journeys (Hindi)'),V('8csS-7aCpiw','Ultimate Journeys ep 30')],o:'Pokémon Asia Official (Hindi)'},
+ {n:'Ben 10',y:'2005',ch:'Cartoon Network',c:'cn',col:'#27a844',p:'NrK39TpR3Jc',b:'Classic Ben 10 in Hindi, from "And Then There Were 10".',s:[Q(['NrK39TpR3Jc','Rle_SF_sFLo','xXR-V8cXmgk','SnMpQEic_2E','fPAxjbjOqX8'],'Classic, Hindi')],o:'Fan uploads (Hindi)',f:1},
+ {n:'Roll No 21',y:'2010',ch:'Cartoon Network',c:'cn',col:'#2b6bd6',p:'g3wwfgGAduc',b:'Kris vs Kanishq at the Mathura orphanage.',s:[Q(['g3wwfgGAduc','aS6idt_wDhY','4920Zu03juA','1n1qn4QcZSY','v-RoRqrA0tg'],'Hindi episodes')],o:'Discovery Kids India'},
  {n:'Ninja Hattori',y:'2004',ch:'Nickelodeon',c:'cn',col:'#2c3e50',p:'Dukie1aNMqQ',b:'Hattori, Kenichi and Shishimaru the ninja dog.',s:[L('PLnMNQ238a90IJoFJCPn3Osy8iHIqEQefr','All episodes')],o:'Disney India'},
- {n:'Tom & Jerry',y:'forever',ch:'Cartoon Network',c:'cn',col:'#5a7fbf',p:'KBNey4upFKE',b:'The chase that never ends, from CN India.',s:[V('KBNey4upFKE','Stay-at-home madness')],o:'Cartoon Network India'},
- {n:'Oggy and the Cockroaches',y:'1998',ch:'Cartoon Network · Pogo',c:'cn',col:'#3fb8e8',p:'QI43sFi4NWY',b:'Oggy vs Joey, Dee Dee and Marky — in Hindi.',s:[L('UU9TgvYNUsMBPl6J2xbL-4qg','Oggy Hindi uploads')],o:'Oggy Hindi (Xilam)'},
- {n:'Mr Bean',y:'2002',ch:'Pogo',c:'cn',col:'#8c2f2f',p:'6qD6-zSsmy8',b:'Teddy, the Mini and a lot of trouble.',s:[V('6qD6-zSsmy8','Animated: Scientist Bean')],o:'Mr Bean Official'},
+ {n:'Tom & Jerry',y:'forever',ch:'Cartoon Network',c:'cn',col:'#5a7fbf',p:'KBNey4upFKE',b:'The chase that never ends, from CN India.',s:[Q(['KBNey4upFKE','GQk9c192Rl0','dTMpQFS-mi8','lN8iuP11Lbk','2950gBMRQ9Q'],'CN India episodes')],o:'Cartoon Network India'},
+ {n:'Oggy and the Cockroaches',y:'1998',ch:'Cartoon Network · Pogo',c:'cn',col:'#3fb8e8',p:'QI43sFi4NWY',b:'Oggy vs Joey, Dee Dee and Marky — Hindi episodes back to back.',s:[L('UU9TgvYNUsMBPl6J2xbL-4qg','Hindi episodes')],o:'Oggy Hindi (Xilam)'},
+ {n:'Mr Bean',y:'2002',ch:'Pogo',c:'cn',col:'#8c2f2f',p:'6qD6-zSsmy8',b:'Teddy, the Mini and a lot of trouble.',s:[Q(['6qD6-zSsmy8','x33KIkyok6U','2AxXuZWBIvA','JyK4l0YYLr8'],'Animated episodes')],o:'Mr Bean Official'},
  {n:'Beyblade Metal Fusion',y:'2009',ch:'Hungama',c:'cn',col:'#4a3fd6',p:'w3Nj4tib6R4',b:'Let it rip! Gingka and Pegasus, in Hindi.',s:[V('w3Nj4tib6R4','Ep 1: Pegasus Has Landed')],o:'Beyblade Official (Hindi)'},
- {n:'Courage the Cowardly Dog',y:'1999–2002',ch:'Cartoon Network',c:'cn',col:'#9b59b6',p:'aspcc4xDwYE',b:'Muriel, Eustace and a very scared pink dog — in Hindi.',s:[V('aspcc4xDwYE','The Fog of Courage (Hindi)')],o:'Mini Land',f:1},
+ {n:'Courage the Cowardly Dog',y:'1999–2002',ch:'Cartoon Network',c:'cn',col:'#9b59b6',p:'aspcc4xDwYE',b:'Muriel, Eustace and a very scared pink dog — in Hindi.',s:[Q(['aspcc4xDwYE','xbFXQDvX6Nw','s51BD1eQoRQ'],'Hindi episodes')],o:'Fan uploads (Hindi)',f:1},
  {n:'Swat Kats',y:'1993–1995',ch:'Cartoon Network',c:'cn',col:'#34495e',p:'JKuRVsukd4w',b:'Bahadur Bille! T-Bone and Razor over Megakat City, in Hindi.',s:[L('PLtnHmooHRkCXB2tzNuZBVatm70Hzb6nVU','Hindi episodes')],o:'Back To 90\'s',f:1},
- {n:'Takeshi\'s Castle',y:'2005',ch:'Pogo',c:'cn',col:'#c0392b',p:'zIWWDqGLmNM',b:'Javed Jaffrey\'s Hindi commentary made it legendary.',s:[V('zIWWDqGLmNM','Episode 1 (Hindi)')],o:'Internet Sandwich',f:1},
- {n:'Tenali Raman',y:'2003',ch:'Cartoon Network',c:'cn',col:'#b03a2e',p:'hi6dW01voIM',b:'CN India\'s own animated court-jester tales.',s:[V('hi6dW01voIM','Episode 1, CN Hindi dub')],o:'El_dante',f:1},
- {n:'Shaktimaan',y:'1997–2005',ch:'DD National',c:'dd',col:'#c8102e',p:'uOleNIC8Spg',b:'Gangadhar hi Shaktimaan hai? India\'s first superhero.',s:[V('uOleNIC8Spg','Episode 1')],o:'Ultra Kids Zone'},
- {n:'Shaka Laka Boom Boom',y:'2000–2004',ch:'Star Plus',c:'dd',col:'#00a8a8',p:'uooVATWi0-g',b:'Sanju and the magic pencil.',s:[V('uooVATWi0-g','Ep 1: the magic pencil')],o:'StarPlus'},
- {n:'Son Pari',y:'2000–2004',ch:'Star Plus',c:'dd',col:'#e056a0',p:'TLBnWNu0BN4',b:'Fruity, Altu and the golden fairy.',s:[V('TLBnWNu0BN4','Ep 87: Sonpari in trouble')],o:'StarPlus'},
- {n:'Karishma Kaa Karishma',y:'2003–2004',ch:'Star Plus',c:'dd',col:'#8e44ad',p:'x00lyH799Qg',b:'A robot girl who wants to be a real kid.',s:[V('x00lyH799Qg','Ep 2: Karishma is in demand')],o:'StarPlus'},
- {n:'Hatim',y:'2003–2004',ch:'Star Plus',c:'dd',col:'#6d4c41',p:'qgvOSHJpsVI',b:'Seven questions, one prince, a lot of special effects.',s:[V('qgvOSHJpsVI','Ep 1: Hatim ka janm')],o:'Star Bharat'},
- {n:'Hero – Bhakti Hi Shakti Hai',y:'2005–2007',ch:'Hungama',c:'dd',col:'#d4ac0d',p:'qvlB_F3jPzI',b:'Joy\'s finger itches whenever someone\'s in trouble.',s:[L('PLvod9C9vnjxtXHrfqtZ1iJXI02Wr5pAgk','All episodes')],o:'Entertainment Copyright World',f:1},
- {n:'Captain Vyom',y:'1998–1999',ch:'DD National',c:'dd',col:'#1b3a8a',p:'4rjnHip7mOA',b:'Milind Soman in India\'s space-commando sci-fi.',s:[V('4rjnHip7mOA','Episode 34')],o:'Wow Play'},
+ {n:'Takeshi\'s Castle',y:'2005',ch:'Pogo',c:'cn',col:'#c0392b',p:'zIWWDqGLmNM',b:'Javed Jaffrey\'s Hindi commentary made it legendary.',s:[Q(['zIWWDqGLmNM','znRVFOScAFM','l7OLrS8OHoc','0Hitf1kBQ2o','3ybTTlJHlQQ'],'Hindi episodes')],o:'Fan uploads (Hindi)',f:1},
+ {n:'Tenali Raman',y:'2003',ch:'Cartoon Network',c:'cn',col:'#b03a2e',p:'hi6dW01voIM',b:'CN India\'s own animated court-jester tales.',s:[V('hi6dW01voIM','Episode 1, CN Hindi dub')],o:'Fan upload',f:1},
+ {n:'Shaktimaan',y:'1997–2005',ch:'DD National',c:'dd',col:'#c8102e',p:'uOleNIC8Spg',b:'Gangadhar hi Shaktimaan hai? India\'s first superhero.',s:[Q(['uOleNIC8Spg','TjXcAWSa7vQ'],'Episodes 1–2')],o:'Ultra Kids Zone'},
+ {n:'Shaka Laka Boom Boom',y:'2000–2004',ch:'Star Plus',c:'dd',col:'#00a8a8',p:'uooVATWi0-g',b:'Sanju and the magic pencil.',s:[Q(['uooVATWi0-g','QrIfagdfCts','iyo31RUwSsk','ipmVVZ3dYpA','9fCxZaKVXt8'],'Episodes (parts in order)')],o:'StarPlus'},
+ {n:'Son Pari',y:'2000–2004',ch:'Star Plus',c:'dd',col:'#e056a0',p:'qn9NM7kQ0Hs',b:'Fruity, Altu and the golden fairy.',s:[Q(['qn9NM7kQ0Hs','FOvJoUqbkvQ','HwDB7BjnXp4','2UGL861V-CU','pVtoxLTf17o','TLBnWNu0BN4'],'Episodes (parts in order)')],o:'StarPlus'},
+ {n:'Karishma Kaa Karishma',y:'2003–2004',ch:'Star Plus',c:'dd',col:'#8e44ad',p:'x00lyH799Qg',b:'A robot girl who wants to be a real kid.',s:[Q(['x00lyH799Qg','6QL7bwj8t7o','hyPm_Fyp1DU','U5nmaTcNavI','VtmpzkuevVA'],'Episodes (parts in order)')],o:'StarPlus'},
+ {n:'Hatim',y:'2003–2004',ch:'Star Plus',c:'dd',col:'#6d4c41',p:'qgvOSHJpsVI',b:'Seven questions, one prince, a lot of special effects.',s:[Q(['qgvOSHJpsVI','Tl2nCPxS-Vw'],'Episode 1')],o:'Star Bharat'},
+ {n:'Hero – Bhakti Hi Shakti Hai',y:'2005–2007',ch:'Hungama',c:'dd',col:'#d4ac0d',p:'qvlB_F3jPzI',b:'Joy\'s finger itches whenever someone\'s in trouble.',s:[L('PLvod9C9vnjxtXHrfqtZ1iJXI02Wr5pAgk','All episodes')],o:'Fan uploads',f:1},
+ {n:'Captain Vyom',y:'1998–1999',ch:'DD National',c:'dd',col:'#1b3a8a',p:'4rjnHip7mOA',b:'Milind Soman in India\'s space-commando sci-fi.',s:[Q(['FxEHdFJGftQ','re1LOnRicec','4rjnHip7mOA','ancAaqDeklU'],'Episodes')],o:'Wow Play'},
  {n:'Malgudi Days',y:'1986–2006',ch:'DD National',c:'dd',col:'#7a5c3a',p:'YGwcpUyTY8k',b:'Swami and friends in R.K. Narayan\'s little town. Ta-na-na…',s:[L('PLLV9m6UjApHegswCPpoy4Ow0zvLeuzWPJ','All episodes')],o:'MalgudiDays'},
- {n:'The Jungle Book (Mowgli)',y:'1993',ch:'DD National',c:'dd',col:'#2e7d32',p:'odvVf3ch64E',b:'Jungle jungle baat chali hai… all 52 Hindi episodes.',s:[L('PL65eurRkEvghrieaRGNpneAZmZoUeM5Kc','All 52 episodes')],o:'Sync',f:1},
- {n:'Vikram Aur Betaal',y:'1985–1986',ch:'DD National',c:'dd',col:'#4b2c5e',p:'C6wzTIc2N7c',b:'Raja Vikram, the Betaal on his shoulder, a riddle every night.',s:[V('C6wzTIc2N7c','Part 1')],o:'Tilak Kathayein'},
+ {n:'The Jungle Book (Mowgli)',y:'1993',ch:'DD National',c:'dd',col:'#2e7d32',p:'odvVf3ch64E',b:'Jungle jungle baat chali hai… all 52 Hindi episodes.',s:[L('PL65eurRkEvghrieaRGNpneAZmZoUeM5Kc','All 52 episodes')],o:'Fan upload',f:1},
+ {n:'Vikram Aur Betaal',y:'1985–1986',ch:'DD National',c:'dd',col:'#4b2c5e',p:'C6wzTIc2N7c',b:'Raja Vikram, the Betaal on his shoulder, a riddle every night.',s:[Q(['C6wzTIc2N7c','ZvntUx_Iutk','jEopQoCaZY4','j8nEsy3P-Nc'],'Episodes')],o:'Tilak Kathayein'},
  {n:'Alif Laila',y:'1993–1997',ch:'DD National',c:'dd',col:'#a66b00',p:'P__V4ICQoow',b:'Sagar\'s Arabian Nights — Sindbad, genies and flying carpets.',s:[L('PLqmdsOwstpJfOtjWGMFTGMruqQV7C5XoL','Alif Laila Hindi')],o:'Sagar Pictures'},
- {n:'Potli Baba Ki',y:'1991',ch:'DD National',c:'dd',col:'#8e44ad',p:'Psw9cXLW-CA',b:'Puppet fairy tales with Gulzar\'s "Aaya re Baba".',s:[V('Psw9cXLW-CA','Episode 1')],o:'Pranab Rongpi',f:1},
+ {n:'Potli Baba Ki',y:'1991',ch:'DD National',c:'dd',col:'#8e44ad',p:'Psw9cXLW-CA',b:'Puppet fairy tales with Gulzar\'s "Aaya re Baba".',s:[Q(['Psw9cXLW-CA','KOrPPvIgzUc','cIoh0sUeK8A'],'Episodes')],o:'Fan uploads',f:1},
  {n:'Ramayan',y:'1987–1988',ch:'DD National',c:'dd',col:'#d35400',p:'RG3Hqth0Eus',b:'Ramanand Sagar\'s epic, with English subtitles.',s:[L('PLFPJRCFRDARSZofcQcV6m7Pu2EAL8_1dv','All episodes')],o:'Tilak'}
 ];
 SHOWS.forEach((x,i)=>{x.no=i+1;x.slug=x.n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')});
 const TABS=[['all','All'],['pre','Preschool'],['cn','Cartoons'],['dd','DD & serials'],['fav','My favourites']];
 const $=s=>document.querySelector(s), pad2=n=>String(n).padStart(2,'0');
 const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const ytUrl=s=>s.t==='v'?'https://www.youtube.com/watch?v='+s.id:'https://www.youtube.com/playlist?list='+s.id;
 const thumb=id=>'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';
 const initials=n=>n.replace(/[^A-Za-z ]/g,'').split(' ').filter(w=>w.length>1&&!/^(the|and|aur|ki|kaa|hi|hai)$/i.test(w)).slice(0,2).map(w=>w[0]).join('').toUpperCase();
-const poster=x=>`<div class="pst" style="background:linear-gradient(135deg,${x.col},#1a1410 180%)">${initials(x.n)}<img alt="" loading="lazy" src="${thumb(x.p)}"><span class="no">CH ${pad2(x.no)}</span></div>`;
+const poster=x=>`<div class="pst" style="--c:${x.col}"><div class="art"><span class="ttl">${esc(x.n)}</span><span class="yr">${esc(x.y)}</span></div><img alt="" loading="lazy" src="${thumb(x.p)}"><span class="no">CH ${pad2(x.no)}</span></div>`;
 let favs=[];try{favs=JSON.parse(localStorage.getItem('btv-fav')||'[]')}catch(e){}
 const saveFav=()=>{try{localStorage.setItem('btv-fav',JSON.stringify(favs))}catch(e){}};
 let tab='all',query='',cur=0,srcIdx=0,mode='wait',player=null,ready=false;
@@ -170,25 +173,36 @@ function renderNow(){
   $('#chan').textContent=pad2(x.no);
   $('#now').innerHTML=`${poster(x)}<div><h2>${esc(x.n)}</h2><div class="meta">${esc(x.y)} · ${esc(x.ch)}<br>from ${esc(x.o)} ${x.f?'<span class="badge s">Fan upload</span>':'<span class="badge">Official</span>'}</div><p>${esc(x.b)}</p>
    ${x.s.length>1?`<div class="srcs">${x.s.map((s,i)=>`<button class="btn" data-s="${i}" aria-pressed="${i===srcIdx}">${esc(s.label)}</button>`).join('')}</div>`:''}
-   <div class="srcs"><a class="btn hot" href="${ytUrl(x.s[srcIdx])}" target="_blank" rel="noopener">Open on YouTube</a><button class="btn" id="favb">${f?'★ Saved':'☆ Favourite'}</button></div></div>`;
+   <div class="srcs"><button class="btn hot" id="nextb">Next channel ▶</button><button class="btn" id="favb">${f?'★ Saved':'☆ Favourite'}</button></div></div>`;
 }
 function screenCard(msg){
   const x=SHOWS[cur],s=x.s[srcIdx];
-  $('#screen').innerHTML=`<div class="card-out" style="background-image:url('${thumb(x.p)}')"><b>CH ${pad2(x.no)} · ${esc(x.n)}</b><small>${esc(msg)}</small><a class="btn hot" href="${ytUrl(s)}" target="_blank" rel="noopener">▶ Watch "${esc(s.label)}"</a></div>`;
+  $('#screen').innerHTML=`<div class="card-out" style="background-image:url('${thumb(x.p)}')"><b>CH ${pad2(x.no)} · ${esc(x.n)}</b><small>${esc(msg)}</small>${mode==='live'?'<button class="btn hot" id="skipb">Next channel ▶</button>':''}</div>`;
   player=null;ready=false;
 }
+let errs=0;
+function load(s){ if(s.t==='v')player.loadVideoById(s.id); else if(s.t==='q')player.loadPlaylist(s.ids); else player.loadPlaylist({listType:'playlist',list:s.id}) }
+function failed(){
+  const x=SHOWS[cur],s=x.s[srcIdx];errs++;
+  const max=s.t==='q'?s.ids.length:(s.t==='l'?6:1);
+  if(errs<max&&s.t!=='v'){try{player.nextVideo()}catch(e){}return}
+  if(srcIdx<x.s.length-1){srcIdx++;errs=0;renderNow();load(x.s[srcIdx]);return}
+  srcIdx=0;screenCard('Abhi yeh show nahi chal raha. Try the next channel!');
+}
 function play(){
-  const x=SHOWS[cur],s=x.s[srcIdx];
+  const x=SHOWS[cur],s=x.s[srcIdx];errs=0;
   renderNow();
-  if(mode!=='live'){screenCard(mode==='wait'?'Tuning in…':'This preview can\'t play videos inline — open the hosted site, or watch on YouTube.');return}
-  const opts={listType:'playlist',list:s.id};
-  if(player&&ready){s.t==='v'?player.loadVideoById(s.id):player.loadPlaylist(opts);return}
+  if(mode!=='live'){screenCard(mode==='wait'?'Tuning in…':'Videos play on your own hosted Bachpan TV site (GitHub Pages). This preview can only show the catalogue.');return}
+  if(player&&ready){load(s);return}
   $('#screen').innerHTML='<div id="yt"></div>';ready=false;
-  player=new YT.Player('yt',{host:'https://www.youtube-nocookie.com',width:'100%',height:'100%',videoId:s.t==='v'?s.id:undefined,
-    playerVars:Object.assign({rel:0,playsinline:1},s.t==='l'?opts:{},location.origin.startsWith('http')?{origin:location.origin}:{}),
-    events:{onReady:()=>{ready=true},onError:()=>{if(srcIdx<x.s.length-1){srcIdx++;try{player.destroy()}catch(e){}player=null;play()}else{srcIdx=0;screenCard('This one won\'t play inside the page right now.')}}}});
+  const pv={rel:0,playsinline:1,modestbranding:1,iv_load_policy:3};
+  if(s.t==='q'){pv.playlist=s.ids.slice(1).join(',')} else if(s.t==='l'){pv.listType='playlist';pv.list=s.id}
+  if(location.origin.startsWith('http'))pv.origin=location.origin;
+  player=new YT.Player('yt',{host:'https://www.youtube-nocookie.com',width:'100%',height:'100%',videoId:s.t==='v'?s.id:(s.t==='q'?s.ids[0]:undefined),playerVars:pv,
+    events:{onReady:()=>{ready=true},onError:failed,onStateChange:e=>{if(e.data===1)errs=0}}});
 }
 function tune(i,hash=true){cur=(i+SHOWS.length)%SHOWS.length;srcIdx=0;play();renderGrid();if(hash)location.hash=SHOWS[cur].slug}
+$('#screen').addEventListener('click',e=>{if(e.target.id==='skipb')tune(cur+1)});
 $('#tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;tab=b.dataset.k;renderTabs();renderGrid()});
 $('#q').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();renderGrid()});
 $('#grid').addEventListener('click',e=>{const b=e.target.closest('.show');if(!b)return;tune(+b.dataset.i);scrollTo({top:0,behavior:'smooth'})});
@@ -196,7 +210,8 @@ let turns=0;
 $('#knob').addEventListener('click',()=>{turns++;$('#knob').style.transform=`rotate(${turns*36}deg)`;tune(cur+1)});
 $('#rand').addEventListener('click',()=>{let r;do{r=Math.floor(Math.random()*SHOWS.length)}while(r===cur);tune(r)});
 $('#now').addEventListener('click',e=>{
-  const s=e.target.closest('[data-s]');if(s){srcIdx=+s.dataset.s;try{player&&player.destroy()}catch(_){}player=null;play();return}
+  const s=e.target.closest('[data-s]');if(s){srcIdx=+s.dataset.s;play();return}
+  if(e.target.id==='nextb'){tune(cur+1);return}
   if(e.target.id==='favb'){const sl=SHOWS[cur].slug;favs=favs.includes(sl)?favs.filter(v=>v!==sl):favs.concat(sl);saveFav();renderNow();renderGrid()}
 });
 document.addEventListener('error',e=>{if(e.target.tagName==='IMG')e.target.remove()},true);
